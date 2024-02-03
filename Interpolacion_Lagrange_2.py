@@ -6,8 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Guardamos os valores de x e f(x) a serem utilizados em vetores.
-x = [0,1,3,6]
-y = [-3,0,5,7]
+x = [1,2,3,4,6]
+y = [275000,530000,810000,1155000,1650000]
 
 # Plotamos os valores a serem interpolados.
 plt.figure('1')
@@ -20,7 +20,7 @@ plt.legend()
 p = lagrange(x,y)
 
 # Avaliar o polinômio obtido em um intervalo de [0,6].
-x1 = np.linspace(0,6,100)
+x1 = np.linspace(0,1,1000)
 y1 = p(x1)
 
 # Plotamos o polinômio obtido, assim como os pontos utilizados.
@@ -33,4 +33,4 @@ plt.legend()
 plt.show()
 
 # Se quisermos obter valores de f(x), tudo o que precisamos fazer é avaliar o polinômio no ponto x. Por exemplo, para encontrar f(x) quando x=1.8.
-print(p(1.8))
+print(p(5.5))
