@@ -2,8 +2,8 @@ import numpy as np
 import sympy as sym
 import matplotlib.pyplot as plt 
 # Inserimos os dados de teste.
-xi = np.array([0, 0.2, 0.3, 0.4])
-fi = np.array([1, 1.6, 1.7, 2.0])
+xi = np.array([1,2,3,4,6])
+fi = np.array([275000,530000,810000,1155000,1650000])
 
 # Procedimento.
 # Descobrir quantos elementos possui xi.
