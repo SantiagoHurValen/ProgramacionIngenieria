@@ -18,7 +18,7 @@ v1 = [0.480, 0.950, 1.411, 1.845, 2.237, 2.600, 2.932, 3.232, 3.456] #dx/L2
 v2 = [2.613, 2.575, 2.538, 2.463, 2.350, 2.238, 2.125, 2.013, 1.863] #L3/L2
 v3 = [2.075, 2.050, 2.025, 1.975, 1.900, 1.825, 1.750, 1.675, 1.575] #L1/L2
 
-#Segmento rectilineo (variable a usar dentro del código, sacada del problema), además el espacio de tiempo que vamos a usar
+#Segmento rectilineo (variable a usar dentro del código, sacada del problema)
 dx = 20
 
 #LaGrange
