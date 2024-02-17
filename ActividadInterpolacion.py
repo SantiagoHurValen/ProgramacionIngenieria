@@ -1,3 +1,7 @@
+#Planteamiento del problema:
+#Dentro del problema dado en la actividad se busca dar un optimización a un mecanismo de línea recta de cuatro barras, la idea es encontrar
+#las dimensiones óptimas para tener una línea recta y una velocidad constante sin mucho margen de error
+
 #Importación de librerías a usar dentro del código
 from scipy.interpolate import lagrange
 from scipy.interpolate import InterpolatedUnivariateSpline
@@ -31,6 +35,74 @@ pglgr3 = lagrange(x1,y3)
 pglgv1 = lagrange(x1,v1)
 pglgv2 = lagrange(x1,v2)
 pglgv3 = lagrange(x1,v3)
+
+#Graficas de Lagrange
+#Datos que necesito para graficar
+t = np.linspace(20,180,200) #Espacio o vector creado para graficar
+#Datos para la interpolacion de rectitud
+f1 = pglgr1(t)
+f2 = pglgr2(t)
+f3 = pglgr3(t)
+#Datos para la interpolacion de velocidad
+f4 = pglgv1 (t)
+f5 = pglgv2 (t)
+f6 = pglgv3 (t)
+
+#Graficas de interpolación para el criterio de rectitud
+plt.figure('1')
+plt.subplot(1,3,1)
+plt.plot(t,f1, label='Interpolacion Lagrange')
+plt.plot(x1,y1,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos dx/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,2)
+plt.plot(t,f2, label='Interpolacion Lagrange')
+plt.plot(x1,y2,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L3/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,3)
+plt.plot(t,f3, label='Interpolacion Lagrange')
+plt.plot(x1,y3,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L1/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.show()
+
+#Graficas de interpolacion para el criterio de la velocidad
+plt.figure('2')
+plt.subplot(1,3,1)
+plt.plot(t,f4, label='Interpolacion Lagrange')
+plt.plot(x1,v1,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos dx/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,2)
+plt.plot(t,f5, label='Interpolacion Lagrange')
+plt.plot(x1,v2,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L3/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,3)
+plt.plot(t,f6, label='Interpolacion Lagrange')
+plt.plot(x1,v3,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L1/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.show()
 
 #Despejes para encontrar los valores de L1, L2 y L3 con el criterio de rectitud
 L2_1 = dx/pglgr1(30)
@@ -98,6 +170,74 @@ pgspr3 = InterpolatedUnivariateSpline(x1,y3)
 pgspv1 = InterpolatedUnivariateSpline(x1,v1)
 pgspv2 = InterpolatedUnivariateSpline(x1,v2)
 pgspv3 = InterpolatedUnivariateSpline(x1,v3)
+
+#Graficas de Splines
+#Datos que necesito para graficar
+t = np.linspace(20,180,200) #Espacio o vector creado para graficar
+#Datos para la interpolacion de rectitud
+k1 = pgspr1(t)
+k2 = pgspr2(t)
+k3 = pgspr3(t)
+#Datos para la interpolacion de velocidad
+k4 = pgspv1 (t)
+k5 = pgspv2 (t)
+k6 = pgspv3 (t)
+
+#Graficas de interpolación para el criterio de rectitud
+plt.figure('3')
+plt.subplot(1,3,1)
+plt.plot(t,k1, label='Interpolacion Splines')
+plt.plot(x1,y1,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos dx/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,2)
+plt.plot(t,k2, label='Interpolacion Splines')
+plt.plot(x1,y2,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L3/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,3)
+plt.plot(t,k3, label='Interpolacion Splines')
+plt.plot(x1,y3,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L1/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.show()
+
+#Graficas de interpolacion para el criterio de la velocidad
+plt.figure('4')
+plt.subplot(1,3,1)
+plt.plot(t,k4, label='Interpolacion Splines')
+plt.plot(x1,v1,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos dx/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,2)
+plt.plot(t,k5, label='Interpolacion Splines')
+plt.plot(x1,v2,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L3/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.subplot(1,3,3)
+plt.plot(t,k6, label='Interpolacion Splines')
+plt.plot(x1,v3,'-.x',mew=2,label='Datos originales')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Gráfica para los datos L1/L2")
+plt.grid(color='gray', linestyle='dashed', linewidth=1, alpha=0.4)
+
+plt.show()
 
 #Despejes para encontrar los valores de L1, L2 y L3 con el criterio de rectitud
 L2_1 = dx/pgspr1(30)
