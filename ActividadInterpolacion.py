@@ -22,24 +22,24 @@ dx = 20
 t = np.linspace(0,200,200)
 
 #Uso de las funciones para interpolación de Lagrange para el giro de la manivela por medio de la rectitud
-pglg1 = lagrange(x1,y1)
-pglg2 = lagrange(x1,y2)
-pglg3 = lagrange(x1,y3)
+pglgr1 = lagrange(x1,y1)
+pglgr2 = lagrange(x1,y2)
+pglgr3 = lagrange(x1,y3)
 
 #Uso de las funciones para interpolación de Lagrange para el rango angular por medio de la rectitud
-palg1 = lagrange(x2,y1)
-palg2 = lagrange(x2,y2)
-palg3 = lagrange(x2,y3)
+palgr1 = lagrange(x2,y1)
+palgr2 = lagrange(x2,y2)
+palgr3 = lagrange(x2,y3)
 
 #Uso de las funciones para interpolación de Lagrange para el giro de la manivela por medio de la velocidad
-pglg1 = lagrange(x1,v1)
-pglg2 = lagrange(x1,v2)
-pglg3 = lagrange(x1,v3)
+pglgv1 = lagrange(x1,v1)
+pglgv2 = lagrange(x1,v2)
+pglgv3 = lagrange(x1,v3)
 
 #Uso de las funciones para interpolación de Lagrange para el rango angular por medio de la velocidad
-palg1 = lagrange(x2,v1)
-palg2 = lagrange(x2,v2)
-palg3 = lagrange(x2,v3)
+palgv1 = lagrange(x2,v1)
+palgv2 = lagrange(x2,v2)
+palgv3 = lagrange(x2,v3)
 
 
 f1 = p1(t)
