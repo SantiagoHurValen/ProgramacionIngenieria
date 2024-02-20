@@ -315,6 +315,6 @@ la segunda es una interpolación de la librería numpy a la cual se le llama Spl
 siendo n el grado del polino por defecto que mejor encuentre la función spline para los datos a los que se le va a hacer la interpolación.
 
 Con lo anterior y las gráficas mostradas dentro del código se puede concluir que la función splines muestra un mejor desempeño en esta problematica, ya que 
-
-
+entre los datos de 20° y 40° en la gráfica de Lagrange hay datos atípicos porque la función no es tan precisa por ello hay cierto margen de error entre las respuestas 
+de la función de Lagrange y la Splines
 '''
